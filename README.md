@@ -1,6 +1,5 @@
-# Portfolio Optimization: Markowitz and KKT Conditions - R Studio
-## Markowitz Portfolio Optimization with No-Short-Selling Constraints (KKT System & Quadratic Programming)
-A production-grade implementation of Markowitz Mean-Variance Optimization under non-negativity (no-short-selling) constraints, solved via the **Goldfarb-Idnani Dual Active-Set Method** using R `quadprog` package.
+# Markowitz Portfolio Optimization with No-Short-Selling Constraints (KKT System & Quadratic Programming) - R Studio
+A production-grade implementation of Markowitz Mean-Variance Optimization under non-negativity (no-short-selling) KKT constraints, solved via the **Goldfarb-Idnani Dual Active-Set Method** using R `quadprog` package.
 ## Project Overview
 This repository demonstrates the end-to-end mathematical formulation, KKT system verification, and numerical solution of a 4-asset portfolio allocation problem (Money Market, Capital Stable, Balance, Growth) over historical fund data (2004–2013).
 * **Objective:** Minimize annualized portfolio risk (variance) subject to a targeted annualized return of 8.00%.
