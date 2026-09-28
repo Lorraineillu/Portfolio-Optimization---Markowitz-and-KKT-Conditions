@@ -5,7 +5,7 @@ This repository demonstrates the end-to-end mathematical formulation, KKT system
 * **Objective:** Minimize annualized portfolio risk (variance) subject to a targeted annualized return of 8.00%.
 * **Boundary Constraints:** Realistic institutional long-only setting ($`w_i \ge 0`$, no short-selling).
 * **Core Theoretical Bridge:** Validating Karush-Kuhn-Tucker (KKT) stationarity, primal feasibility, dual feasibility, and complementary slackness directly against numerical solver outputs.
----
+
 ## Mathematical & Theoretical Derivation
 ### 1. Quadratic Programming (QP) Standard Form
 In continuous portfolio optimization, the standard convex quadratic minimization formulation is defined as:
@@ -24,7 +24,7 @@ Where:
 
   where $`\mathbf{C}`$ is the correlation matrix and $`\boldsymbol{\sigma}`$ is the annualized volatility vector.
 * $`\mathbf{d} = \mathbf{0}_{4 \times 1}`$ denotes pure variance minimization.
----
+
 ### 2. Constraints & Karush-Kuhn-Tucker (KKT) System
 The portfolio selection problem is governed by:
 
@@ -66,7 +66,6 @@ Because $`\boldsymbol{\Sigma} \succ 0`$ (strictly positive definite), the object
    w_i \cdot v_i = 0 \quad (\forall i \in \{1, 2, 3, 4\})
    ```
 
----
 ### 3. Solver Interface Alignment (`solve.QP`)
 The `solve.QP` engine implements the **Goldfarb-Idnani Dual Active-Set Method**. The internal Fortran routine expects constraints in the canonical transposed format:
 
@@ -100,7 +99,7 @@ Amat <- cbind(mu, rep(1, 4), diag(4))
 bvec <- c(0.08, 1.00, rep(0, 4))
 meq  <- 2
 ```
----
+
 ## Execution & Implementation
 ### Prerequisites
 Install the R package("quadprog")
@@ -112,7 +111,7 @@ library(quadprog)
 ```r
 source("portfolio_optimization.R")
 ```
----
+
 ## Numerical Output & Optimization Report
 ```text
 =================================================================
