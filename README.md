@@ -29,7 +29,7 @@ Where:
 The portfolio selection problem is governed by:
 
 ```math
-\min \quad \frac{1}{2}\mathbf{w}^{\top}\boldsymbol{\Sigma}\mathbf{w}
+\min_{\mathbf{w}} \frac{1}{2}\mathbf{w}^{\top}\boldsymbol{\Sigma}\mathbf{w}
 ```
 
 ```math
@@ -41,7 +41,7 @@ w_i \ge 0, \quad \forall i \in \{1, 2, 3, 4\} & \text{(No-Short-Selling Bounds)}
 \end{cases}
 ```
 
-Because $`\boldsymbol{\Sigma} \succ 0`$ (strictly positive definite), the objective function is strictly convex over a convex polyhedral feasible set. The KKT first-order conditions provide both **necessary and sufficient** criteria for the unique global minimum:
+Because $`\boldsymbol{\Sigma} \succ 0`$ (strictly positive definite), the objective is strictly convex. All constraints are linear, so a constraint qualification holds automatically and the feasible set is a convex polyhedron. Therefore the KKT conditions are **necessary and sufficient** for the unique global minimizer.
 1. **Stationarity (Gradient Balance)**:
 
    ```math
@@ -114,29 +114,30 @@ source("portfolio_optimization.R")
 ```
 ---
 ## Numerical Output & Optimization Report
-### When executed, the console produces the structured output:
 ```text
-=======================================================
-      Markowitz Portfolio Optimization Results (QP)    
-=======================================================
+=================================================================
+         Markowitz Portfolio Optimization Results (QP)    
+=================================================================
 1. Optimal Portfolio Weights (w_i >= 0)
   Money Market Capital Stable        Balance         Growth 
-        0.0000         0.4512         0.5488         0.0000 
+        0.0000         0.4512         0.5488         0.0000
+
 2. Portfolio Performance Metrics
 Target Expected Return :   8.00%
 Actual Expected Return :   8.00%
 Annualized Risk (sd)   :  10.81%
+
 3. Dual Variables & KKT Multipliers
 Equality Constraints: Shadow Prices (lambda)
    Target Return (lambda_1) Budget Constraint (lambda_2) 
                    0.254789                     0.008707
+
 Inequality Constraints: Non-negativity Forces (v_i >= 0)
   Money Market Capital Stable        Balance         Growth 
       0.004246       0.000000       0.000000       0.000197 
----
-=======================================================
+=================================================================
 KKT Complementary Slackness Check: VERIFIED (w_i * v_i = 0 holds)
-=======================================================
+=================================================================
 ```
 
 ## Economic & Quantitative Conclusion
