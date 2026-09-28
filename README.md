@@ -104,7 +104,7 @@ meq  <- 2
 ---
 ## Execution & Implementation
 ### Prerequisites
-Install the optimization packages("quadprog")
+Install the R package("quadprog")
 ```r
 if (!require("quadprog")) install.packages("quadprog")
 library(quadprog)
