@@ -149,7 +149,7 @@ Both assets hit the non-negativity barrier ($`w_1 = 0, w_4 = 0`$). Their corresp
 
 ### 2. Financial Interpretation of Asset Allocation
 **Redundancy of Growth Fund**:
-While Growth offers an expected return of $`10.30\%`$, it incurs high volatility ($`16.64\%`$) and near-perfect correlation with Balance ($`\rho_{34} = 0.997`$). The optimal trade-off combines Capital Stable ($`\mu = 6.65\%`$) and Balance ($`\mu = 9.11\%`$), which neatly brackets the target return ($`8.00\%`$) while capturing significant diversification benefits, rendering Growth redundant.
+While Growth offers an expected return of $`10.30\%`$, it incurs high risk(volatility) ($`16.64\%`$) and near-perfect correlation with Balance ($`\rho_{34} = 0.997`$). The optimal trade-off combines Capital Stable ($`\mu_{2} = 6.65\%`$) and Balance ($`\mu_{3} = 9.11\%`$), which neatly brackets the target return ($`8.00\%`$) while capturing significant diversification benefits, rendering Growth redundant.
 
 **Economic Interpretation of Shadow Prices**:
 The Lagrangian multiplier $`\lambda_1 = 0.254789`$ reflects the marginal variance cost of the target return constraint:
